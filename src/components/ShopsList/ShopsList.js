@@ -10,7 +10,7 @@ export const ShopsList = ({ shops, selectedShop, onClick }) => {
       {shops.map((shop) => (
         <li key={shop.id}>
           <ShopItem 
-            selected={selectedShop && selectedShop.id === shop.id}
+            // selected={selectedShop && selectedShop.id === shop.id}
             // disabled={disabled}
             onClick={() => onClick(shop)}
           >
