@@ -12,6 +12,6 @@ export const ShopItem = styled.button`
   border: 1px solid #000;
   border-radius: 10px;
   padding: 20px;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? '' : 'pointer')};
   background-color: ${({ selected }) => (selected ? 'lightblue' : 'transparent')};
 `;
