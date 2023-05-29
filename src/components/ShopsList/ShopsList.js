@@ -11,7 +11,7 @@ export const ShopsList = ({ shops, selectedShop, isFoods, onClick }) => {
         <li key={shop.id}>
           <ShopItem 
             selected={selectedShop && selectedShop.id === shop.id}
-            disabled={disabled && selectedShop.id !== shop.id}
+            disabled={selectedShop && disabled && selectedShop.id !== shop.id}
             onClick={() => onClick(shop)}
           >
 
