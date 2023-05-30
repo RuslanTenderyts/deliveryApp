@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 
 
-export const ShopsList = ({ shops, selectedShop, onClick }) => {
-  // const disabled = isFoods.length > 0;
+export const ShopsList = ({ shops, selectedShop, isFoods, onClick }) => {
+  const disabled = isFoods.length > 0;
    return (
     <List>
       {shops.map((shop) => (
         <li key={shop.id}>
           <ShopItem 
-            // selected={selectedShop && selectedShop.id === shop.id}
-            // disabled={disabled}
+            selected={selectedShop && selectedShop.id === shop.id}
+            disabled={disabled}
             onClick={() => onClick(shop)}
           >
 
