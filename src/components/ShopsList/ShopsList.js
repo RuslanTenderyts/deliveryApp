@@ -14,7 +14,6 @@ export const ShopsList = ({ shops, selectedShop, isFoods, onClick }) => {
             disabled={disabled}
             onClick={() => onClick(shop)}
           >
-
               {shop.name}
           </ShopItem>
         </li>

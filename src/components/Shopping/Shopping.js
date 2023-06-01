@@ -14,7 +14,7 @@ const getInitialOrder = () => {
   return [];
 };
 
-export const Shopping = ({selectedFoods, onChange, removeFood}) => {
+export const Shopping = ({selectedFoods, setSelectedFoods, onChange, removeFood}) => {
   const [orders, setOrders] = useState(getInitialOrder);
   
   useEffect(() => {
@@ -23,7 +23,8 @@ export const Shopping = ({selectedFoods, onChange, removeFood}) => {
   }, [orders]);
  
   const handleSubmitClick = (valueForm) => {
-    setOrders(prevState => [...prevState , {...valueForm , foods: {...selectedFoods}}])
+    setOrders(prevState => [...prevState , {...valueForm , foods: {...selectedFoods}}]);
+    setSelectedFoods([]);
   }
 
   const calculateTotalPrice = (foods) => {

@@ -51,7 +51,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />} >
           <Route index element={<Home addToCart={addToCart} isFoods={selectedFoods} />} />       
-          <Route path="shopping-cart" element={<ShoppingCart selectedFoods={selectedFoods} onChange={handlerQuantityChanch} removeFood = {handleRemoveFood}  />} />
+          <Route path="shopping-cart" element={<ShoppingCart selectedFoods={selectedFoods} setSelectedFoods={setSelectedFoods} onChange={handlerQuantityChanch} removeFood = {handleRemoveFood}  />} />
         </Route>
       </Routes>
     );

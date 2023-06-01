@@ -1,9 +1,9 @@
 import { Shopping } from "../components/Shopping/Shopping"
 
-const ShoppingCart = ({selectedFoods, onChange, removeFood}) => {
+const ShoppingCart = ({selectedFoods, setSelectedFoods, onChange, removeFood}) => {
     return (
         <div>
-            <Shopping selectedFoods={ selectedFoods } onChange={onChange} removeFood={removeFood}/>
+            <Shopping selectedFoods={ selectedFoods } setSelectedFoods={setSelectedFoods} onChange={onChange} removeFood={removeFood}/>
             
         </div>
     )
