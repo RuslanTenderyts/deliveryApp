@@ -3,7 +3,9 @@ import {  useLocation } from "react-router-dom";
 import { Container, ShopsWrapper, Foods, TotalPrice, Link } from './Shopping.stayled';
 import { ShoppingList} from '../ShoppingList/ShoppingList';
 import { Scrollbars } from 'react-custom-scrollbars-2';
-import { ShoppingFormik } from "../ShoppingForm/ShoppingForm"
+import { ShoppingFormik } from "../ShoppingForm/ShoppingForm";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const getInitialOrder = () => {
   const orders = localStorage.getItem('orders');
@@ -25,6 +27,9 @@ export const Shopping = ({selectedFoods, setSelectedFoods, onChange, removeFood}
   const handleSubmitClick = (valueForm) => {
     setOrders(prevState => [...prevState , {...valueForm , foods: {...selectedFoods}}]);
     setSelectedFoods([]);
+    toast.info(`Ваше замовлення id: ${valueForm.id} успішно сформовано. Очікуйте на доставку до 5хв.` , {
+      position: "top-right",
+      autoClose: 3000,});
   }
 
   const calculateTotalPrice = (foods) => {
@@ -59,7 +64,7 @@ export const Shopping = ({selectedFoods, setSelectedFoods, onChange, removeFood}
                     <ShoppingList foods={selectedFoods} onChange={onChange} removeFood={removeFood} />
                   </>
                 )}
-              
+               <ToastContainer />
             </Scrollbars>
         </Foods>
     </Container>
